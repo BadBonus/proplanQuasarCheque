@@ -34,36 +34,69 @@ export default {
       },
       {
         id:'c1',
-        next:['c2','с3'],
+        next:['c2','c8'],
         prev:'0',
         text:['да', 'нет'],
         title:'Ваш питомец старше 1 года?',
         colored:true
       },
-      {
+       {
         id:'c2',
-        next:['с4'],
+        next:['c3','c4'],
         prev:'c1',
         text:['да', 'нет'],
         title:'Есть ли питомцу 7 лет?',
         colored:true
       },
-       {
-        id:'c4',
-        next:['l6', 'l7'],
+        {
+        id:'c3',
+        next:['l','l'],
         prev:'c2',
         text:['да', 'нет'],
-        title:'Был ли стериализован ваш питомец?',
+        title:'Был ли стерилизован ваш питомец?',
         colored:true
       },
         {
-        id:'c3',
-        next:['l4', 'l5'],
-        prev:'c1',
+        id:'c4',
+        next:['c5','c6'],
+        prev:'c2',
         text:['да', 'нет'],
-        title:'чувствительное пищеварение?',
+        title:'Был ли стерилизован ваш питомец?',
         colored:true
       },
+        {
+        id:'c5',
+        next:['l','l'],
+        prev:'c4',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
+      },
+        {
+        id:'c6',
+        next:['l','c7'],
+        prev:'c5',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
+      },
+        {
+        id:'c7',
+        next:['l','l'],
+        prev:'c6',
+        text:['да', 'нет'],
+        title:'Часто линяет?',
+        colored:true
+      },
+       {
+        id:'c8',
+        next:['l','l'],
+        prev:'c1',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
+      },
+
       {
         id:'d1',
         next:['d2', 'd5'],
@@ -74,7 +107,7 @@ export default {
       },
        {
         id:'d2',
-        next:['d3'],
+        next:['d3', 'd5', 'd6'],
         prev:'d1',
         text:['Мелкая или карликовая', 'крупная', 'средняя'],
         title:'Какого размера порода вашего питомца?',
@@ -82,7 +115,7 @@ export default {
       },
         {
         id:'d3',
-        next:['l1','d4'],
+        next:['l','d4'],
         prev:'d2',
         text:['да', 'нет'],
         title:'Чувствительная кожа?',
@@ -90,7 +123,7 @@ export default {
       },
        {
         id:'d4',
-        next:['l2','l3'],
+        next:['l','l'],
         prev:'d3',
         text:['да', 'нет'],
         title:'Чувствительное пищеварение?',
@@ -98,16 +131,56 @@ export default {
       },
        {
         id:'d5',
-        next:['l8','d3','d6'],
-        prev:'d1',
-        text:['крупная','средняя', 'Мелкая или карликовая'],
-        title:'Ваша собака старше 1 года?',
-        colored:false
+        next:['l','l'],
+        prev:'d2',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
       },
         {
         id:'d6',
-        next:['l9','l10'],
-        prev:'d5',
+        next:['l','d7'],
+        prev:'d2',
+        text:['да', 'нет'],
+        title:'Чувствительная кожа?',
+        colored:true
+      },
+        {
+        id:'d7',
+        next:['l','l'],
+        prev:'d6',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
+      },
+       {
+        id:'d8',
+        next:['l','d9', 'd11'],
+        prev:'d1',
+        text:['крупная', 'средняя', 'Мелкая или карликовая'],
+        title:'Какого размера порода вашего питомца?',
+        colored:true
+      },
+        {
+        id:'d9',
+        next:['l','d10'],
+        prev:'d8',
+        text:['да', 'нет'],
+        title:'Чувствительная кожа?',
+        colored:true
+      },
+      {
+        id:'d10',
+        next:['l','l'],
+        prev:'d9',
+        text:['да', 'нет'],
+        title:'Чувствительное пищеварение?',
+        colored:true
+      },
+        {
+        id:'d11',
+        next:['l','l'],
+        prev:'d8',
         text:['да', 'нет'],
         title:'Чувствительная кожа?',
         colored:true
