@@ -2,8 +2,11 @@
  <div class="QuestionBlock">
 
    <div class="bottomBlock"></div>
-   <img @click="chooseQuestion(!currentQuestion?'0':null, 'start')" :class="{logoClick:true,
-   logoClickQuestions:currentQuestion}" src="~assets/statics/proplan-logo.png" alt="logo">
+   <div class="logoWrapper" :class="{logoClickQuestions:currentQuestion}">
+       <img @click="chooseQuestion(!currentQuestion?'0':null, 'start')" :class="{logoClick:true}" src="~assets/statics/proplan-logo.png" alt="logo">
+      <span @click="chooseQuestion(!currentQuestion?'0':null, 'start')" v-if="!currentQuestion"> <b>&#9650;</b> <br> Начать</span>
+   </div>
+
    <img src="~assets/statics/img/dog-logo.png" alt="dog" class="animals">
    <img src="~assets/statics/img/cat-logo.png" alt="cat" class="animals cat">
     <Question @chooseQuestion="chooseQuestion" :item="currentQuestion" />
@@ -193,6 +196,12 @@ export default {
       ]
     }
   },
+    mounted(){
+    if(this.$route.query.return==='true'){
+      this.currentQuestion = this.arrayQuestions[0];
+      this.idForLink = "0start";
+    }
+  },
   methods:{
     chooseQuestion(id, answ){
       console.log(id);
@@ -231,7 +240,7 @@ export default {
   background: #000;
   height: 50vh;
 }
-.logoClick{
+.logoWrapper{
   width: 20%;
   position: absolute;
   left: 0;
@@ -239,6 +248,32 @@ export default {
   top: 0;
   bottom: 0;
   margin: auto;
+  height: 11vw;
+}
+.logoWrapper span{
+  color:#fff;
+     display: inline-block;
+    /* background: #fff; */
+    position: absolute;
+    top: 21vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2rem;
+    text-align: center;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+
+.logoWrapper span b {
+    font-size: 1.5vw;
+    position: relative;
+    top:.25rem;
+}
+
+.logoClick{
+width: 100%;
       border: 1px solid black;
     outline: 1px solid #fff;
     cursor: pointer;
@@ -261,6 +296,7 @@ export default {
     border:none;
     box-shadow: 0px 6px 6px -5px #000;
   width: 13.7%;
+  height: 7.3vw;
 
 }
 
