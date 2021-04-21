@@ -99,7 +99,7 @@ export default {
 
       {
         id:'d1',
-        next:['d2', 'd5'],
+        next:['d2', 'd8'],
         prev:'0',
         text:['да', 'нет'],
         title:'Ваша собака старше 1 года?',
@@ -159,7 +159,7 @@ export default {
         prev:'d1',
         text:['крупная', 'средняя', 'Мелкая или карликовая'],
         title:'Какого размера порода вашего питомца?',
-        colored:true
+        colored:false
       },
         {
         id:'d9',
