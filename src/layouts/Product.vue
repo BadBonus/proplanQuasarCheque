@@ -3,10 +3,10 @@
 
    <img @click="$router.push(`/`)"  class="Product__logo" src="~assets/statics/proplan-logo.png" alt="logo">
 <div class="Product__wrapper flex flex-center">
-   <q-card class="my-card" v-if="choosedProduct.image.length === 1" >
-            <q-img  :src="require(`../assets/statics/img/dogs/${choosedProduct.image[0]}`)" style="width: 400px">
+   <q-card class="my-card"  >
+            <q-img  :src="require(`../assets/statics/img/dogs/${choosedProduct.image[currentIndex]}`)" style="width: 400px">
                 <div class="absolute-bottom">
-                <div class="text-h5">{{choosedProduct.textFront[0]}}</div>
+                <div class="text-h5">{{choosedProduct.textFront[currentIndex]}}</div>
                 <div class="text-subtitle2"></div>
                 </div>
             </q-img>
@@ -20,17 +20,30 @@
       <q-card>
         <q-card-section class="row items-center">
             <q-btn icon="close" flat round dense v-close-popup />
-          <div class="text-h5">{{choosedProduct.textFront[0]}}</div>
+          <div class="text-h5">{{choosedProduct.textFront[currentIndex]}}</div>
           <q-space />
 
         </q-card-section>
 
         <q-card-section>
-          <p class="text-h6">{{choosedProduct.textExpan[0]}}</p>
+          <p class="text-h6">{{choosedProduct.textExpan[currentIndex]}}</p>
         </q-card-section>
       </q-card>
     </q-dialog>
 </div>
+
+   <div class="row justify-center" v-if="choosedProduct.image.length > 1">
+      <q-btn-toggle
+        glossy
+        v-model="currentIndex"
+        toggle-color="primary"
+        :options="choosedProduct.image.map((el,index)=>({
+          value:index,
+          label:index+1
+        }))"
+        class="controls"
+      />
+    </div>
 
 <!-- <q-carousel
       v-model="slide"
@@ -90,6 +103,7 @@ export default {
        slide: 'style',
       lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?',
    more: false,
+   currentIndex:0,
    products:[{
      id:"0startd1длясобакd2даd3Мелкаяиликарликоваяlда",
      image:['1.jpg'],
@@ -285,5 +299,8 @@ span.q-btn__content
 }
 
 
-
+.controls{
+  background: #fff;
+  margin-top: 2rem;
+}
 </style>
