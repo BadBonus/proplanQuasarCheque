@@ -195,6 +195,9 @@ export default {
        if(id[0]==='l'){
         this.$router.push(`/product/${this.idForLink.replace(/\s+/g, '')}`);
       }
+      if(id === null){
+        this.idForLink = '';
+      }
     }
   }
 }
