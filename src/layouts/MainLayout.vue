@@ -8,6 +8,10 @@
    <img src="~assets/statics/img/cat-logo.png" alt="cat" class="animals cat">
     <Question @chooseQuestion="chooseQuestion" :item="currentQuestion" />
 
+    <button v-if="currentQuestion !== null && currentQuestion.id !== '0'" @click="returnQue" class="return">
+      Назад
+    </button>
+
  </div>
 </template>
 
@@ -23,6 +27,7 @@ export default {
       // leftDrawerOpen: false,
       // essentialLinks: linksData,
       idForLink:'',
+      lastLink:'',
       currentQuestion:null,
       arrayQuestions:[{
         id:'0',
@@ -192,12 +197,18 @@ export default {
     chooseQuestion(id, answ){
       this.currentQuestion = this.arrayQuestions.find(el=>el.id===id);
       this.idForLink = this.idForLink + id + answ;
+      this.lastLink = id + answ;
        if(id[0]==='l'){
         this.$router.push(`/product/${this.idForLink.replace(/\s+/g, '')}`);
       }
       if(id === null){
         this.idForLink = '';
       }
+    },
+    returnQue(){
+      this.currentQuestion = this.arrayQuestions.find(el=>el.id===this.currentQuestion.prev);
+      let newId = this.idForLink.replace(this.lastLink, '');
+      this.idForLink = newId;
     }
   }
 }
@@ -246,5 +257,20 @@ export default {
 
 }
 
+.return{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 28vh;
 
+  background: #000;
+  outline: 1px solid #fff;
+  width: 11vw;
+  height: 5vw;
+  font-size: 2vw;
+  border: none;
+  color: #fff;
+  box-shadow: 0 1px 6px 1px #fff;
+}
 </style>
