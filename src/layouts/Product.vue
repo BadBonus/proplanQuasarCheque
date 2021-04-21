@@ -303,4 +303,12 @@ span.q-btn__content
   background: #fff;
   margin-top: 2rem;
 }
+
+.q-btn-group{
+  background-color: #000;
+}
+.q-btn-group button{
+  margin: 0 1rem;
+  background: #fff;
+}
 </style>

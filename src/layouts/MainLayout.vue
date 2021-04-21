@@ -195,15 +195,20 @@ export default {
   },
   methods:{
     chooseQuestion(id, answ){
-      this.currentQuestion = this.arrayQuestions.find(el=>el.id===id);
+      console.log(id);
+      if(id === null){
+        this.idForLink = '';
+        this.currentQuestion = null;
+      }
+      if(id !== null){
+        this.currentQuestion = this.arrayQuestions.find(el=>el.id===id);
       this.idForLink = this.idForLink + id + answ;
       this.lastLink = id + answ;
        if(id[0]==='l'){
         this.$router.push(`/product/${this.idForLink.replace(/\s+/g, '')}`);
       }
-      if(id === null){
-        this.idForLink = '';
       }
+
     },
     returnQue(){
       this.currentQuestion = this.arrayQuestions.find(el=>el.id===this.currentQuestion.prev);
@@ -219,6 +224,8 @@ export default {
   background-color: #fff;
   position: relative;
   padding-top: 50vh;
+  overflow: hidden;
+  height: 100vh;
 }
 .bottomBlock{
   background: #000;
@@ -262,8 +269,8 @@ export default {
   margin: auto;
   left: 0;
   right: 0;
-  bottom: 28vh;
-
+  bottom: -43vh;
+  top:0;
   background: #000;
   outline: 1px solid #fff;
   width: 11vw;
