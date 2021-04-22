@@ -370,7 +370,7 @@ body > div.q-dialog.fullscreen.no-pointer-events.q-dialog--modal > div.q-dialog_
 .contentBlock_left figcaption{
   color: #fff;
   font-size: 2vw;
-  width: 30vw;
+  width: 37vw;
   margin: auto;
 }
 .contentBlock{
@@ -382,10 +382,15 @@ body > div.q-dialog.fullscreen.no-pointer-events.q-dialog--modal > div.q-dialog_
 }
 .contentBlock_right{
   color: #fff;
-  font-size: 1.35vw;
+  font-size: 1.2vw;
   display: block;
   width: 49.1vw;
   position: relative;
   top: 1.5vw;
+  padding-right: 4vw;
+}
+
+#q-app > div > div.row.justify-center > div > button.q-btn.q-btn-item.non-selectable.no-outline.q-btn--standard.q-btn--rectangle.bg-primary.text-white.q-btn--actionable.q-focusable.q-hoverable.q-btn--wrap{
+  background: #fadb95 !important;
 }
 </style>

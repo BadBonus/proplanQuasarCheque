@@ -7,7 +7,7 @@
       <span @click="chooseQuestion(!currentQuestion?'0':null, 'start')" v-if="!currentQuestion"> <b>&#9650;</b> <br> Начать</span>
    </div>
 
-   <img src="~assets/statics/img/dog-logo.png" alt="dog" class="animals">
+   <img src="~assets/statics/img/dog-logo.png" alt="dog" class="animals dog">
    <img src="~assets/statics/img/cat-logo.png" alt="cat" class="animals cat">
     <Question @chooseQuestion="chooseQuestion" :item="currentQuestion" />
 
@@ -286,16 +286,19 @@ width: 100%;
 }
 .cat{
   left: unset;
-  right: 0;
+  right: -2.8vw;
+}
+.dog{
+  left: -0.8vw;
 }
 
 .logoClickQuestions{
   position: absolute;
-    top: 3vh;
+    top: 2vh;
     bottom: unset;
     border:none;
     box-shadow: 0px 6px 6px -5px #000;
-  width: 13.7%;
+  width: 23%;
   height: 7.3vw;
 
 }
