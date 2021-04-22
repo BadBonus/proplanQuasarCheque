@@ -5,7 +5,7 @@
      <img @click="$router.push({ path: '/', query: { return: 'true' } })"  class="Product__logo" src="~assets/statics/proplan-logo.png" alt="logo">
      <span @click="$router.push({ path: '/', query: { return: 'true' } })" > <b>&#9650;</b> <br> в начало</span>
    </div>
-<div class="Product__wrapper flex flex-center">
+<!-- <div class="Product__wrapper flex flex-center">
    <q-card class="my-card"  >
             <q-img  :src="require(`../assets/statics/img/${choosedProduct.image[currentIndex]}`)" style="width: 400px">
                 <div class="absolute-bottom">
@@ -34,6 +34,20 @@
         </q-card-section>
       </q-card>
     </q-dialog>
+</div> -->
+
+<div class="contentBlock">
+  <div class="contentBlock_left">
+    <figure>
+    <img :src="require(`../assets/statics/img/${choosedProduct.image[currentIndex]}`)"  alt="product photo">
+   <figcaption>{{choosedProduct.textFront[currentIndex]}}</figcaption>
+  </figure>
+  </div>
+  <div class="contentBlock_right">
+    <span>
+      {{choosedProduct.textExpan[currentIndex]}}
+    </span>
+  </div>
 </div>
 
    <div class="row justify-center" v-if="choosedProduct.image.length > 1">
@@ -346,5 +360,32 @@ body > div.q-dialog.fullscreen.no-pointer-events.q-dialog--modal > div.q-dialog_
     border: 1px solid black;
     border-radius: 3px;
     padding: 0 0.3rem;
+}
+.contentBlock_left figure{
+  text-align: center;
+}
+.contentBlock_left figure img{
+  width: 50%;
+}
+.contentBlock_left figcaption{
+  color: #fff;
+  font-size: 2vw;
+  width: 30vw;
+  margin: auto;
+}
+.contentBlock{
+  display: flex;
+}
+.contentBlock > * {
+  width: 50%;
+  justify-content: center;
+}
+.contentBlock_right{
+  color: #fff;
+  font-size: 1.35vw;
+  display: block;
+  width: 49.1vw;
+  position: relative;
+  top: 1.5vw;
 }
 </style>
