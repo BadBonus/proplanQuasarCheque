@@ -287,7 +287,7 @@ export default {
 }
 
 .ProductImgWrapper{
- width: 13.7%;
+ width: 20%;
   position: absolute;
   left: 0;
   right: 0;
@@ -303,19 +303,19 @@ export default {
      display: inline-block;
     /* background: #fff; */
     position: absolute;
-    top: 17vh;
+    top: 29vh;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     height: 2rem;
     text-align: center;
-    font-size: 1vw;
+    font-size: .7vw;
     text-transform: uppercase;
 }
 
 .ProductImgWrapper span b {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     position: relative;
     top:.25rem;
 }

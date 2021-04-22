@@ -294,7 +294,7 @@ width: 100%;
 
 .logoClickQuestions{
   position: absolute;
-    top: 2vh;
+    top: 7vh;
     bottom: unset;
     border:none;
     box-shadow: 0px 6px 6px -5px #000;
